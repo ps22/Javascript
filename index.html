@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script language="JavaScript" type="application/javascript">
+//        (function XX() {
+//            var x = "Hello Alex!!";      // I will invoke myself
+//            alert(x);
+//        })();
+
+    </script>
+</head>
+<body >
+<form method="get" name="numbers">
+    <p>
+        Input height of cylinder
+        <input type="text" name="input1" id="input1">
+    </p>
+    <p>
+        Input radius of cylinder
+        <input type="text" name="input2" id="input2">
+    </p>
+    <p>
+        Here's square of your cylinder:
+        <input type="text" name="square" id="square" size="20">
+    </p>
+    <p>
+        Here's volume of your cylinder:
+        <input type="text" name="volume" id="volume" size="20">
+    </p>
+    <p>
+
+        <input type="button" name="calc" onclick="calculateSV()" value="Calc">
+    </p>
+</form>
+<script>
+    var x = 6;
+    var y = 15;
+    var z = 4;
+
+    res = x += y - x++ * z;
+    document.write("x += y - x++ * z" + res + "<br/>");
+
+    res = z = --x - y * 5;
+    document.write(res +"<br/>");
+
+    res = y /= x + 5 % z ;
+    document.write(res + "<br/>");
+
+    res = z = x++ + y * 5 ;
+    document.write(res + "<br/>");
+
+    res = x = y - x++ * z ;
+    document.write(res + "<br/>");
+
+    function calculateSV()
+    {
+        var e1 = document.getElementById("input1").value;
+        var height = parseInt(e1);
+        var e2 = document.getElementById("input2").value;
+        var radius = parseInt(e2);
+
+        var square = 2 * 3.14 * radius * (radius + height);
+        document.getElementById("square").value=square;
+
+        var volume =  3.14 * radius * radius * height;
+        document.getElementById("volume").value=volume;
+    }
+
+    function calculate()
+    {
+        var e1 = document.getElementById("input1").value;
+        var num1 = parseInt(e1);
+
+        var e2 = document.getElementById("input2").value;
+        var num2 = parseInt(e2);
+
+        var add = num1 + "+" + num2 + "=";
+        var subtraction = "; " + num1 + "-" + num2 + "=";
+        var multiplication = "; " + num1 + "*" + num2 + "=";
+        var division = "; " + num1 + "/" + num2 + "=";
+
+        var resAdd = add + parseInt(num1 + num2);
+        var resSubtraction = subtraction + parseInt(num1 - num2);
+        var resMultiplication = multiplication + parseFloat(num1 * num2);
+        var resDivision = division + parseFloat(num1 / num2);
+
+        document.getElementById("result").value=resAdd + resSubtraction + resMultiplication +resDivision;
+    }
+
+</script>
+
+</body>
+</html>
